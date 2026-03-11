@@ -1,5 +1,6 @@
 const { Client, GatewayIntentBits } = require('discord.js');
 const { spawn } = require('child_process');
+const { serverPath } = require('./config.js');
 const path = require('path');
 require('dotenv').config();
 
@@ -19,8 +20,6 @@ client.on('interactionCreate', async interaction => {
     }
 
     await interaction.reply('Starting server...');
-
-    const serverPath = path.join(__dirname, 'server');
 
     serverProcess = spawn('java', [
       '-Xmx4G',
@@ -78,30 +77,6 @@ client.on('interactionCreate', async interaction => {
     } else {
       interaction.reply('Server is offline.');
     }
-  }
-
-  if (interaction.commandName === 'players') {
-    if (!serverProcess) {
-        return interaction.reply('Server is offline.');
-    }
-
-    const listener = data => {
-        const output = data.toString();
-
-        const match = output.match(/There are (\d+) of a max (\d+) players online/);
-        if (match) {
-            const online = match[1];
-            const max = match[2];
-
-            interaction.reply(`Players online: ${online}/${max}`);
-
-            serverProcess.stdout.off('data', listener);
-        }
-    };
-
-    serverProcess.stdout.on('data', listener);
-
-    serverProcess.stdin.write('list\n');
   }
 });
 
