@@ -1,0 +1,13 @@
+{
+    "mine_iron": {
+        "type": "mine",
+        "target": "minecraft:iron_ore",
+        "min": 10,
+        "max": 25,
+        "reward": {
+            "item": "minecraft:diamond",
+            "amount": 5,
+            "xp": 50
+        }
+    }
+}

@@ -38,7 +38,7 @@ for (const file of eventFiles) {
 	}
 }
 
-client.once("ready", () => {
+client.once("clientReady", () => {
     updateChannelName(client);
 })
 
