@@ -16,7 +16,7 @@ module.exports = {
             const result = await fetch(`https://api.mcstatus.io/v2/status/java/${process.env.SERVER_IP}`);
             const data = await result.json();
 
-            const playerList = data.players.list;
+            const playerList = data.players?.list || [];
 
             if (playerList.length === 0) {
                 return interaction.reply('There are no players online.');
