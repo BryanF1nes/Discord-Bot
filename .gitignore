@@ -1,4 +1,5 @@
 *server
+*backups
 *node_modules
 .env
 *token.txt
