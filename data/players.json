@@ -1,11 +1,12 @@
 {
     "116765690207141889": {
+
         "discord_id": "116765690207141889",
         "minecraft_uuid": "046dff03-2dac-4659-ba65-a905a64914d0",
         "minecraft_name": "MrFines",
         "level": 1,
         "xp": 0,
         "quests_completed": 0,
-        "daily_quest": null
+        "current_quest": null
     }
 }
