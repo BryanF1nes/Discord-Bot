@@ -32,3 +32,5 @@ class Player {
         this.current_quest = null;
     }
 }
+
+module.exports = { Player }
