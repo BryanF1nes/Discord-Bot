@@ -44,15 +44,7 @@ module.exports = {
         }
 
         const player = new Player(discord_id, minecraft_name, minecraft_uuid);
-        players[minecraft_uuid] = {
-            discord_id: player.discord_id,
-            minecraft_name: player.minecraft_name,
-            minecraft_uuid: player.minecraft_uuid,
-            level: player.level,
-            xp: player.xp,
-            quests_completed: player.quests_completed,
-            current_quest: player.current_quest
-        };
+        players[minecraft_uuid] = player.toJSON();
 
         savePlayer();
 

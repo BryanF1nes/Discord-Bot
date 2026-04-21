@@ -31,6 +31,18 @@ class Player {
         this.quests_completed = 0;
         this.current_quest = null;
     }
+
+    toJSON() {
+        return {
+            discord_id: this.discord_id,
+            minecraft_uuid: this.minecraft_uuid,
+            minecraft_name: this.minecraft_name,
+            level: this.level,
+            xp: this.xp,
+            quests_completed: this.quests_completed,
+            current_quest: this.current_quest
+        }
+    }
 }
 
 module.exports = { Player }
