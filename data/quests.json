@@ -1,13 +1,14 @@
 {
     "mine_iron": {
+        "quest_name": "mine_iron",
         "type": "mine",
-        "target": "minecraft:iron_ore",
-        "min": 10,
-        "max": 25,
+        "quest_target": "minecraft:iron_ore",
+        "quest_min": 10,
+        "quest_max": 25,
         "reward": {
-            "item": "minecraft:diamond",
+            "item": "minecraft:diamon",
             "amount": 5,
-            "xp": 50
+            "xp": 100
         }
     }
 }
