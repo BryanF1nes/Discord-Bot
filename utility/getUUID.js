@@ -6,7 +6,7 @@ function normalizeName(name) {
 }
 
 function getUUID(minecraft_name) {
-    const whiteListPath = path.join(__dirname, '../data/whitelist.json');
+    const whiteListPath = path.join(__dirname, '../server/whitelist.json');
     const whitelist = JSON.parse(fs.readFileSync(whiteListPath, 'utf-8'));
     const targetName = normalizeName(minecraft_name);
 
@@ -16,5 +16,7 @@ function getUUID(minecraft_name) {
 
     return match ? match.uuid : null;
 }
+
+getUUID('MrFines');
 
 module.exports = { getUUID };
